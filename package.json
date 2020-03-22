@@ -1,0 +1,27 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.2"
+  },
+  "scripts": {
+    "dev": "nodemon -e js,graphql index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armc7/graphql-server.git"
+  },
+  "author": "Aram Ceballos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/armc7/graphql-server/issues"
+  },
+  "homepage": "https://github.com/armc7/graphql-server#readme"
+}
