@@ -1,27 +1,22 @@
-'use strict';
-
-const { graphql, buildSchema } = require('graphql');
+const { buildSchema } = require('graphql');
 const express = require('express');
 const gqlMiddleware = require('express-graphql');
+const { readFileSync } = require('fs');
+const { join } = require('path');
+const resolvers = require('./lib/resolvers');
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const schema = buildSchema(`
-    type Query {
-        hello: String
-    }
-`);
-
-const resolvers = {
-  hello: () => 'Hello world',
-};
+const schema = buildSchema(
+  readFileSync(join(__dirname, 'lib', 'schema.graphql'), 'utf-8'),
+);
 
 app.use(
   '/api',
   gqlMiddleware({
-    schema: schema,
+    schema,
     rootValue: resolvers,
     graphiql: true,
   }),
