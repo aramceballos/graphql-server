@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { makeExecutableSchema } = require('graphql-tools');
 const express = require('express');
 const gqlMiddleware = require('express-graphql');
