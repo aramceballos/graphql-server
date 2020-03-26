@@ -16,5 +16,6 @@ module.exports = {
     'no-console': 'off',
     'no-underscore-dangle': 'off',
     'no-param-reassign': 'off',
+    'arrow-body-style': 'off',
   },
 };
