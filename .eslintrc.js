@@ -17,5 +17,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-param-reassign': 'off',
     'arrow-body-style': 'off',
+    'nonblock-statement-body-position': 'off',
+    'curly': 'off'
   },
 };
