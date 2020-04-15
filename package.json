@@ -20,7 +20,8 @@
     "nodemon": "2.0.2"
   },
   "scripts": {
-    "dev": "nodemon -e js,graphql index.js"
+    "dev": "nodemon -e js,graphql index.js",
+    "start": "set NODE_ENV=production&& node index"
   },
   "repository": {
     "type": "git",
