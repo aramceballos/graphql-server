@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "nodemon -e js,graphql index.js",
-    "start": "set NODE_ENV=production&& node index"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
