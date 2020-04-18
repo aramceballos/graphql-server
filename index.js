@@ -14,7 +14,11 @@ const typeDefs = readFileSync(
   'utf-8',
 );
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  playground: true,
+  typeDefs,
+  resolvers,
+});
 
 const errorHandler = (err, req, res, next) => {
   if (res.headersSent) {
