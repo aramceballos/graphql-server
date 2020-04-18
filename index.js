@@ -25,6 +25,12 @@ const errorHandler = (err, req, res, next) => {
 };
 app.use(errorHandler);
 
+app.get('/probar', (req, res, next) => {
+  res.status(200).json({
+    is: 'working',
+  });
+});
+
 server.applyMiddleware({ app, path: '/graphql' });
 
 app.listen(PORT, (error) => {
