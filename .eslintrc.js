@@ -18,6 +18,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'arrow-body-style': 'off',
     'nonblock-statement-body-position': 'off',
-    'curly': 'off'
+    'curly': 'off',
+    'consistent-return': 'off'
   },
 };
