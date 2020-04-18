@@ -15,10 +15,24 @@ type Course {
   level: Level
 }
 
-type Student {
+interface Person {
   _id: ID!
   name: String!
   email: String!
+}
+
+type Student implements Person {
+  _id: ID!
+  name: String!
+  email: String!
+  avatar: String
+}
+
+type Monitor implements Person {
+  _id: ID!
+  name: String!
+  email: String!
+  phone: String
 }
 
 type Query {
@@ -28,58 +42,61 @@ type Query {
   "Returns one course"
   course(id: ID!): Course
 
-  "Returns all students"
-  students: [Student]
+  "Returns all people"
+  people: [Person]
 
-  "Returns one student"
-  student(id: ID!): Student
+  "Returns one person"
+  person(id: ID!): Person
 }
 
-input CreateCourse {
+input CreateCourseInput {
   title: String!
   teacher: String
   description: String!
   topic: String
 }
 
-input EditCourse {
+input EditCourseInput {
   title: String
   teacher: String
   description: String
   topic: String
 }
 
-input CreateStudent {
+input CreatePersonInput {
   name: String!
   email: String!
-  password: String!
+  phone: String
+  avatar: String
 }
 
-input EditStudent {
+input EditPersonInput {
   name: String
   email: String
   password: String
+  phone: String
+  avatar: String
 }
 
 type Mutation {
   "Creates a new course"
-  createCourse(input: CreateCourse!): Course
+  createCourse(input: CreateCourseInput!): Course
 
   "Edits a course"
-  editCourse(id: ID!, input: EditCourse!): Course
+  editCourse(id: ID!, input: EditCourseInput!): Course
 
   "Deletes a course"
   deleteCourse(id: ID!): ID
 
-  "Creates a new student"
-  createStudent(input: CreateStudent!): Student
+  "Creates a new person"
+  createPerson(input: CreatePersonInput!): Person
 
-  "Edits a student"
-  editStudent(input: EditStudent!): Student
+  "Edits a person"
+  editPerson(input: EditPersonInput!): Person
 
-  "Add a Student to a Course"
+  "Add a person to a course"
   addToCourse(courseID: ID!, personID: ID!): Course
 
-  "Deletes a student"
-  deleteStudent(id: ID!): ID
+  "Deletes a person"
+  deletePerson(id: ID!): ID
 }
