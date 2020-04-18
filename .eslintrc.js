@@ -19,6 +19,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'nonblock-statement-body-position': 'off',
     'curly': 'off',
-    'consistent-return': 'off'
+    'consistent-return': 'off',
+    'no-unused-vars': 'off'
   },
 };
